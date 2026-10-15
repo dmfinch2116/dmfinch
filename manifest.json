@@ -1,0 +1,1 @@
+{"name":"Tornado Tracker — United States","short_name":"Tornado Tracker","description":"Current and recent US tornado reports","start_url":"./index.html","scope":"./","display":"standalone","orientation":"portrait","background_color":"#081120","theme_color":"#0b1426","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}

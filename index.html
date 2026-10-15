@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1426"><meta name="description" content="A mobile-friendly tracker for current and recent US tornado reports.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Tornado Tracker</title><link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<header class="top"><div class="brandmark">↗</div><div><div class="eyebrow">UNITED STATES · WEATHER WATCH</div><h1>Tornado Tracker</h1></div><button id="refresh" class="iconbtn" aria-label="Refresh reports" title="Refresh">↻</button></header>
+<main>
+<section class="statusbar"><span class="live-dot"></span><span id="status">Connecting to storm reports…</span><span id="updated" class="muted"></span></section>
+<section class="hero"><div><p class="eyebrow">TORNADO REPORTS</p><div class="bigcount" id="count">—</div><p class="sub">reports in selected period</p></div><div class="heroicon">🌪️</div></section>
+<section class="controls">
+<label>Time window<select id="period"><option value="1">Today</option><option value="2">Past 2 days</option><option value="7" selected>Past 7 days</option></select></label>
+<label>State<select id="state"><option value="">All states</option></select></label>
+<label>Search<input id="search" type="search" placeholder="City, county, state…"></label>
+</section>
+<section class="sectionhead"><div><h2>Report map</h2><p>Tap a marker for report details</p></div><span class="pill">PRELIMINARY</span></section>
+<div id="map" role="application" aria-label="Map of tornado reports"></div>
+<section class="sectionhead listhead"><div><h2>Recent reports</h2><p id="listnote">Newest first · preliminary data</p></div><button id="sort" class="smallbtn">Newest ↓</button></section>
+<div id="reports" class="reports"><div class="loading">Loading reports…</div></div>
+<section class="note"><strong>Important distinction</strong><p>Live Storm Prediction Center reports are preliminary sightings/reports, not a list of confirmed tornadoes. They generally do not include an official EF rating or a surveyed start/end time. Ratings, path duration and track details are added after National Weather Service damage surveys; a missing rating does not mean EF0.</p></section>
+<section class="sources"><h2>Data & safety</h2><p>Reports: NOAA/NWS Storm Prediction Center. This app is for situational awareness, not life-safety alerts. Follow official warnings and local emergency instructions.</p><p><a href="https://www.spc.noaa.gov/climo/reports/" target="_blank" rel="noreferrer">SPC storm reports</a> · <a href="https://www.weather.gov/" target="_blank" rel="noreferrer">National Weather Service</a> · <a href="https://www.ncei.noaa.gov/access/storm-events/" target="_blank" rel="noreferrer">NOAA Storm Events Database</a></p></section>
+</main>
+<nav class="bottomnav"><span class="active">◉ <small>Reports</small></span><a href="https://www.weather.gov/" target="_blank" rel="noreferrer">⚠ <small>Official alerts</small></a><a href="https://www.spc.noaa.gov/" target="_blank" rel="noreferrer">☁ <small>SPC outlooks</small></a></nav>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js"></script>
+</body></html>
